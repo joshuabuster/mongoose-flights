@@ -68,7 +68,7 @@
     <input type="submit" value="Add Destination">
   </form>
   <h2>Add Tickets</h2>
-  <form id="add-tickets-form" method="POST" action="/flights/<%= flight._id %>/destinations">
+  <form id="add-tickets-form" method="POST" action="/flights/<%= flight._id %>/tickets">
     <label>Seat:</label>
       <input name="seat" required pattern="[A-F][1-9]\d?">
       <br><br>
