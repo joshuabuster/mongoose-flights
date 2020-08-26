@@ -27,7 +27,7 @@
     <div><%= flight.departs %></div>
       <br>
     <% flight.destination.forEach(function (d) { %>
-    <div><strong>Destinations: </strong></div>
+    <div><strong>Destination: </strong></div>
     <div><%= d.airport %> </div>
       <br>
     <div><strong>Arrival Date/Time:</strong></div>
@@ -35,13 +35,28 @@
       <br>
     <% }); %> 
   </section>
+  <h2>Tickets</h2>
+  <table>
+      <thead>
+        <tr>
+          <th>Seat:</th>
+          <th>Price:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> A12 </td>
+          <td> 150 </td>
+        </tr>
+      </tbody>
+    </table>
   <br>
   <h2>Add Arrival Destinations</h2>
   <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
     <label>Arrives:</label>
       <input type="datetime-local" name="arrival">
       <br><br>
-    <label>Destination(s): </label>
+    <label>Destination: </label>
     <select name="airport">
       <option value="AUS">AUS</option>
       <option value="DFW">DFW</option>
@@ -52,7 +67,15 @@
       <br><br>
     <input type="submit" value="Add Destination">
   </form>
-
-   
+  <h2>Add Tickets</h2>
+  <form id="add-tickets-form" method="POST" action="/flights/<%= flight._id %>/destinations">
+    <label>Seat:</label>
+      <input name="seat" required pattern="[A-F][1-9]\d?">
+      <br><br>
+    <label>Price:</label>
+      <input name="price" type="number">
+      <br><br>
+      <input type="submit" value="Add Ticket">
+  </form>
 </body>
 </html>
