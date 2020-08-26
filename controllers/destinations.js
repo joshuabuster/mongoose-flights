@@ -5,10 +5,11 @@ module.exports = {
 };
 
 function create(req, res) {
-    Movie.findById(req.params.id, function(err, flight) {
-      flight.destinations.push(req.body);
+    Flight.findById(req.params.id, function(err, flight) {
+      flight.destination.push(req.body);
+      console.log(flight.destination);
       flight.save(function(err) {
-        res.redirect(`/flight/${flight._id}`);
+        res.redirect(`/flights/${flight._id}`);
       });
     });
   }

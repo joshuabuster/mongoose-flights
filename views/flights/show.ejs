@@ -12,5 +12,47 @@
         <a href="/flights">All Flights</a>
    </nav>
    <h1><%= title %> </h1>
+   <br>
+   <section id="show-page">
+    <div><strong>Flight Number:</strong></div>
+    <div><%= flight.flightNo %></div>
+      <br>
+    <div><strong>Departure Airport:</strong></div>
+    <div><%= flight.airport %></div>
+      <br>
+    <div><strong>Departure Airline:</strong></div>
+    <div><%= flight.airline %></div>
+      <br>
+    <div><strong>Departure Date/Time: </strong></div>
+    <div><%= flight.departs %></div>
+      <br>
+    <% flight.destination.forEach(function (d) { %>
+    <div><strong>Destinations: </strong></div>
+    <div><%= d.airport %> </div>
+      <br>
+    <div><strong>Arrival Date/Time:</strong></div>
+    <div><%= d.arrival %> </div>
+      <br>
+    <% }); %> 
+  </section>
+  <br>
+  <h2>Add Arrival Destinations</h2>
+  <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
+    <label>Destination(s): </label>
+    <select name="airport">
+      <option value="AUS">AUS</option>
+      <option value="DFW">DFW</option>
+      <option value="DEN">DEN</option>
+      <option value="LAX">LAX</option>
+      <option value="SAN">SAN</option>
+    </select>
+    <input type="submit" value="airport">
+    <br><br>
+    <label>Arrives:
+      <input type="date" name="arrival">
+    </label>
+  </form>
+
+   
 </body>
 </html>
