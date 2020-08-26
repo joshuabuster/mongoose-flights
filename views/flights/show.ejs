@@ -38,6 +38,9 @@
   <br>
   <h2>Add Arrival Destinations</h2>
   <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
+    <label>Arrives:</label>
+      <input type="date" name="arrival">
+      <br><br>
     <label>Destination(s): </label>
     <select name="airport">
       <option value="AUS">AUS</option>
@@ -46,11 +49,8 @@
       <option value="LAX">LAX</option>
       <option value="SAN">SAN</option>
     </select>
-    <input type="submit" value="airport">
-    <br><br>
-    <label>Arrives:
-      <input type="date" name="arrival">
-    </label>
+      <br><br>
+    <input type="submit" value="Add Destination">
   </form>
 
    
