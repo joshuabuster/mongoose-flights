@@ -45,19 +45,21 @@
       </thead>
       <tbody>
         <tr>
-          <td> A12 </td>
-          <td> 150 </td>
+          <td>tickets.seat</td>
+          <td>tickets.price</td>
         </tr>
       </tbody>
     </table>
   <br>
+  <a href="/flights/<%= flight._id %>/tickets/new" class="button">Add Ticket</a>
+  <br>
   <h2>Add Arrival Destinations</h2>
-  <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
+  <form id="add-destination-form" method="GET" action="/flights/<%= flight._id %>/destinations"> 
     <label>Arrives:</label>
       <input type="datetime-local" name="arrival">
       <br><br>
     <label>Destination: </label>
-    <select name="airport">
+    <select name="airport">              
       <option value="AUS">AUS</option>
       <option value="DFW">DFW</option>
       <option value="DEN">DEN</option>
@@ -66,16 +68,6 @@
     </select>
       <br><br>
     <input type="submit" value="Add Destination">
-  </form>
-  <h2>Add Tickets</h2>
-  <form id="add-tickets-form" method="POST" action="/flights/<%= flight._id %>/tickets">
-    <label>Seat:</label>
-      <input name="seat" required pattern="[A-F][1-9]\d?">
-      <br><br>
-    <label>Price:</label>
-      <input name="price" type="number">
-      <br><br>
-      <input type="submit" value="Add Ticket">
   </form>
 </body>
 </html>
