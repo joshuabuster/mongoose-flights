@@ -13,7 +13,6 @@ function create(req, res) {
     ...req.body,
     flight: req.params.id
   };
-  console.log(newTicket);
   Ticket.create(newTicket, function(err, ticket) {
     ticket.save(function(err) {
       if(err) return res.render('tickets/new');
