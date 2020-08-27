@@ -45,8 +45,8 @@
       </thead>
       <tbody>
         <tr>
-          <td>tickets.seat</td>
-          <td>tickets.price</td>
+          <td> <%= tickets.seat %> </td>
+          <td> <%= tickets.price %> </td>
         </tr>
       </tbody>
     </table>
@@ -54,7 +54,7 @@
   <a href="/flights/<%= flight._id %>/tickets/new" class="button">Add Ticket</a>
   <br>
   <h2>Add Arrival Destinations</h2>
-  <form id="add-destination-form" method="GET" action="/flights/<%= flight._id %>/destinations"> 
+  <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations"> 
     <label>Arrives:</label>
       <input type="datetime-local" name="arrival">
       <br><br>

@@ -13,7 +13,7 @@
     </nav>
     <h1>Add Ticket For Flight</h1>
     <br>
-    <form id="add-tickets-form" method="POST" action="/flights/">
+    <form id="add-tickets-form" method="POST" action="/flights/<%= flight._id %>/tickets/">
       <label>Seat:</label>
         <input name="seat" required pattern="[A-F][1-9]\d?">
         <br><br>
