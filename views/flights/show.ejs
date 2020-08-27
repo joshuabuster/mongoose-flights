@@ -44,10 +44,12 @@
         </tr>
       </thead>
       <tbody>
+        <% tickets.forEach(function(t) { %> 
         <tr>
-          <td> <%= tickets.seat %> </td>
-          <td> <%= tickets.price %> </td>
+          <td> <%= t.seat %> </td>
+          <td> <%= t.price %> </td>
         </tr>
+        <% }); %> 
       </tbody>
     </table>
   <br>
